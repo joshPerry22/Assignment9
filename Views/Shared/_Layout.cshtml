@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Assignment9</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <a asp-action="Index">Index</a> | 
+    <a asp-action="MovieForm">Movie Form</a> |
+    <a asp-action="MovieList">Movie List</a> |
+    <a asp-action="MyPodcasts">Podcast</a>
+    <div>
+        @RenderBody()
+    </div>
+    
+</body>
+</html>

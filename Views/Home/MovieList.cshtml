@@ -1,0 +1,43 @@
+﻿
+
+@model MovieViewModel 
+<h2>Movie List</h2>
+<div>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr><th>Category </th><th> Title </th><th> Year </th><th> Director First  </th><th>Director Last</th><th> Rating</th><th> Edited </th><th> Lent to </th><th> Notes </th></tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.Movie)
+
+            {
+                @if (x.Title.ToLower() != "independence day")
+                {
+                    <tr>
+                        <td>@x.Category</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.DirectorFirst</td>
+                        <td>@x.DirectorLast</td>
+                        <td>@x.Rating</td>
+                        <td>@x.Edited</td>
+                        <td>@x.Lent</td>
+                        <td>@x.Notes</td>
+                        <td><form method="post" asp-action="MovieList">
+                            <button class="btn btn-group-sm btn-secondary" type="submit" name="movieId"   value="@x.MovieId">Edit</button>
+                            </form>
+                        </td>
+                        <td><form method="post" asp-action="MovieDelete">
+                            <button class="btn btn-group-sm btn-danger" type="submit" name="movieDeleteId" value="@x.MovieId">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+
+                }
+
+            }
+        </tbody>
+
+    </table>
+</div>
+<!--Setting a form for delete and edit and using their id-->
